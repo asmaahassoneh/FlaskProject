@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}Student Details{% endblock %} {%
+block content %}
+<div class="details-container">
+  <div class="details-card">
+    <h2 class="details-title">Student Details</h2>
+
+    <div class="detail-item">
+      <span>Name</span>
+      <p>{{ student.name }}</p>
+    </div>
+
+    <div class="detail-item">
+      <span>Student ID</span>
+      <p>{{ student.student_id }}</p>
+    </div>
+
+    <div class="detail-item">
+      <span>GPA</span>
+      <p>{{ "%.2f"|format(student.gpa) }}</p>
+    </div>
+
+    <div class="detail-item">
+      <span>Major</span>
+      <p>{{ student.major }}</p>
+    </div>
+
+    <a
+      class="btn secondary-btn back-btn"
+      href="{{ url_for('student_bp.list_students') }}"
+    >
+      Back to Students
+    </a>
+  </div>
+</div>
+{% endblock %}

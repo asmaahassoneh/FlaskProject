@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}Register Student{% endblock %} {%
+block content %}
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>Register Student</h2>
+
+    {% if error %}
+    <div class="error-msg">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('student_bp.register_student') }}">
+      <div class="form-grid">
+        <input
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Enter student name"
+          value="{{ form_data.name }}"
+          required
+        />
+
+        <input
+          id="student_id"
+          type="text"
+          name="student_id"
+          placeholder="Enter student ID"
+          value="{{ form_data.student_id }}"
+          required
+        />
+
+        <input
+          id="gpa"
+          type="number"
+          step="0.01"
+          min="0"
+          max="4"
+          name="gpa"
+          placeholder="Enter GPA"
+          value="{{ form_data.gpa }}"
+          required
+        />
+
+        <input
+          id="major"
+          type="text"
+          name="major"
+          placeholder="Enter major"
+          value="{{ form_data.major }}"
+          required
+        />
+
+        <button type="submit">Register Student</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

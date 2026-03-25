@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Home - Student Portal{% endblock %}
+{% block content %}
+<div class="home">
+  <div class="glass-card home-content">
+    <h1>Welcome to Flask Student Portal v1</h1>
+    <p>
+      A simple Flask mini project for student registration, listing, and student
+      details.
+    </p>
+
+    <div class="action-links">
+      <a class="btn" href="{{ url_for('student_bp.register_student') }}">
+        Register Student
+      </a>
+      <a
+        class="btn secondary-btn"
+        href="{{ url_for('student_bp.list_students') }}"
+      >
+        View Students
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
