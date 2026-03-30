@@ -3,7 +3,7 @@ students = []
 
 def get_all_students():
     """Return all students."""
-    return students
+    return list(students)
 
 
 def get_student_by_id(student_id):
